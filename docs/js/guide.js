@@ -21,15 +21,15 @@ export function normalizeWorkerUrl(text) {
   }
 }
 
-export const CLOUDFLARE_NOTE = 'أسماء القوائم في Cloudflare تتغير أحياناً. إن ما لقيت اسماً بالضبط فابحث عن أقرب معنى له.';
+export const CLOUDFLARE_NOTE = 'أسماء الأزرار في الخطوات 4 و5 و6 وزر `Create application` طابقتها مع وثائق Cloudflare الرسمية. أما قالب `Hello World` وزر `Edit code` فمن معرفتي ولم تؤكدها الوثائق، فإن ما لقيتهما صوّر لي الشاشة. أسماء القوائم تتغير أحياناً، فابحث عن أقرب معنى.';
 
 export const CLOUDFLARE_STEPS = [
   'سجّل حساباً مجانياً في موقع `cloudflare.com` (ما تأكدت إن كان التسجيل يطلب بطاقة).',
-  'من لوحة التحكم افتح `Workers & Pages` ثم `Create` ثم `Worker`. سمّه `masroofi` واضغط `Deploy`.',
+  'من لوحة التحكم افتح `Workers & Pages` ثم `Create application`. اختر القالب `Hello World` (أبسط قالب)، سمّه `masroofi` واضغط `Deploy`.',
   'اضغط `Edit code`، امسح كل الموجود، والصق كود الصندوق (زر النسخ أعلاه)، ثم اضغط `Deploy`.',
-  'من `Storage & Databases` ثم `KV` أنشئ مساحة باسم `masroofi-inbox`.',
-  'ارجع للـWorker ثم `Settings` ثم `Bindings` ثم `Add` ثم `KV namespace`. اكتب اسم المتغير `INBOX` بالضبط واختر المساحة اللي أنشأتها.',
-  'في `Variables and Secrets` أضف سرّين من نوع `Secret`: الاسم `INGEST_KEY` وقيمته مفتاح الإرسال، والاسم `PULL_KEY` وقيمته مفتاح السحب.',
+  'افتح صفحة `Workers KV` واضغط `Create instance`، سمّها `masroofi-inbox` ثم `Create`.',
+  'ارجع للـWorker وافتح تبويب `Bindings` ثم `Add binding` ثم `KV namespace`. في `Variable name` اكتب `INBOX` بالضبط، واختر المساحة اللي أنشأتها، ثم `Add binding`.',
+  'في الـWorker افتح `Settings` ثم `Variables and Secrets` ثم `Add`. أضف سرّين من نوع `Secret`: الاسم `INGEST_KEY` وقيمته مفتاح الإرسال، والاسم `PULL_KEY` وقيمته مفتاح السحب. ثم اضغط `Deploy` (السر ما يشتغل قبلها).',
   'انسخ عنوان الصندوق (ينتهي بـ `workers.dev`) والصقه في الخانة أدناه.',
 ];
 
